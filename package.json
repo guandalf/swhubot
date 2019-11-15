@@ -4,6 +4,9 @@
   "private": true,
   "author": "Stefano Guandalini <guandalf@protonmail.com>",
   "description": "A simple helpful robot for your Company",
+  "scripts": {
+    "test": "mocha --require coffeescript/register \"test/**/*.coffee\""
+  },
   "dependencies": {
     "hubot": "^3.3.2",
     "hubot-diagnostics": "^1.0.0",
@@ -22,5 +25,11 @@
   },
   "engines": {
     "node": "10.x.x"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coffeescript": "^2.4.1",
+    "hubot-test-helper": "^1.9.0",
+    "mocha": "^6.2.2"
   }
 }
