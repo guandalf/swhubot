@@ -5,7 +5,11 @@
   "author": "Stefano Guandalini <guandalf@protonmail.com>",
   "description": "A simple helpful robot for your Company",
   "scripts": {
-    "test": "mocha --require coffeescript/register \"test/**/*.coffee\""
+    "local": "heroku local",
+    "remote:on": "heroku ps:scale web=1",
+    "remote:off": "heroku ps:scale web=0",
+    "test": "mocha --require coffeescript/register \"test/**/*.coffee\"",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "hubot": "^3.3.2",
