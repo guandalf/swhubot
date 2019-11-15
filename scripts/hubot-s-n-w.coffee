@@ -25,20 +25,20 @@ module.exports = (robot) ->
     else
       res.reply "Opening #{doorType} doors"
 
-  robot.hear /([\+,?,=])([0-9]*)XP/, (res) ->
+  robot.respond /([\+,?,=])([0-9]*)XP/, (res) ->
     action = res.match[1]
     xp = res.match[2] * 1
     key = res.envelope.user.id + "XP"
     actualXP = robot.brain.get(key) * 1 or 0
-    if action is "+"
+    if action is '+'
       newXP = actualXP + xp
 
       robot.brain.set(key, newXP)
-      res.reply "Done. You had " + actualXP + ". New XP count is: " + newXP
+      res.reply 'Done. You had ' + actualXP + '. New XP count is: ' + newXP
 
-    if action is "="
+    if action is '='
       robot.brain.set(key, xp)
-      res.reply "Done. You had " + actualXP + ". New XP count is: " + xp
+      res.reply 'Done. You had ' + actualXP + '. New XP count is: ' + xp
 
-    if action is "?"
-      res.reply "You have " + actualXP + " XP"
+    if action is '?'
+      res.reply 'You have ' + actualXP + ' XP'
