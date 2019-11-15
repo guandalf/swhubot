@@ -27,11 +27,11 @@ module.exports = (robot) ->
 
   robot.hear /([\+,?,=])([0-9]*)XP/, (res) ->
     action = res.match[1]
-    xp = res.match[2]
+    xp = res.match[2] * 1
     key = res.envelope.user.name + "XP"
     actualXP = robot.brain.get(key) * 1 or 0
     if action is "+"
-      newXP = actualXP + (xp * 1)
+      newXP = actualXP + xp
 
       robot.brain.set(key, newXP)
       res.reply "Done. You had " + actualXP + ". New XP count is: " + newXP
