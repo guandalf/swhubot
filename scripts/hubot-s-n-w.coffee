@@ -2,13 +2,18 @@
 #   Helps to play S&W by adding some basic helpers
 #
 # Dependencies:
-#   "<module name>": "<module version>"
+#   none
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   HUBOT_DISCORD_TOKEN
+#   HUBOT_MAX_MESSAGE_LENGTH
 #
 # Commands:
-#   + x XP - adds "x" XPs to the user asking for that
+#   +xXP - adds "x" XPs to the user asking for that
+#   -xXP - subctracts "x" XPs to the user asking for that
+#   =xXP - sets XPs to "x" to the user asking for that
+#   ?XP  - returns the number of XP to the user asking for that
+#   supports XP, HP, GP, SP, BP, CP
 #
 # Notes:
 #   <optional notes required for the script>
