@@ -25,7 +25,7 @@ module.exports = (robot) ->
     else
       res.reply "Opening #{doorType} doors"
 
-  robot.respond /([\+,?,=,-])([0-9]*)([X,H])P/, (res) ->
+  robot.respond /([\+,?,=,-])([0-9]*)([X,H,G,S,B,C])P/, (res) ->
     action = res.match[1]
     xp = res.match[2] * 1
     stat = res.match[3] + 'P'
